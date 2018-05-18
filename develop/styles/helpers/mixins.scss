@@ -1,0 +1,17 @@
+@mixin min($screen) {
+    @media (min-width: #{$screen}px) {
+        @content;
+    }
+}
+
+@mixin max($screen) {
+    @media (max-width: #{$screen}px) {
+        @content;
+    }
+}
+
+@mixin retina() {
+    @media (min-resolution: 1.5dppx) {
+        @content;
+    }
+}

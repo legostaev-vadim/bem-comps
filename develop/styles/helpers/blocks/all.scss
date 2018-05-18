@@ -1,0 +1,331 @@
+/* button-up
+-------------------------------- */
+.button-up {
+    position: fixed;
+    z-index: 9999;
+    right: 12px;
+    bottom: -50px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: .6;
+    transition: all $duration;
+    border: none;
+    border-radius: $borderRadius;
+    background-color: $primDark;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -6px;
+        margin-left: -8px;
+        border: 8px solid transparent;
+        border-top: none;
+        border-bottom: 12px solid #fff;
+    }
+
+    &:hover {
+        opacity: .9;
+    }
+
+    &--show {
+        bottom: 12px;
+    }
+}
+
+.button-up--no-js {
+    display: none;
+}
+/* footer
+-------------------------------- */
+.footer {
+    color: #444;
+}
+/* header
+-------------------------------- */
+.header {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 53px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform: scaleX(-1);
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-family: $fontBold;
+        font-size: 45px;
+        text-transform: uppercase;
+        text-shadow: 0 0 5px #fff;
+    }
+
+    &__subtitle {
+        margin-bottom: 60px;
+        font-size: 25px;
+        text-transform: uppercase;
+        text-shadow: 0 0 2px #000;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+
+    // @include max($medium - 1) {
+    //     &::before {
+    //         background: url(../images/header/images-mob.jpg) no-repeat center center;
+    //         background-size: cover;
+    //         @include retina {
+    //             background: url(../images/header/images-2x-mob.jpg) no-repeat center center;
+    //             background-size: cover;
+    //         }
+    //     }
+    // }
+
+    // @include min($medium) {
+    //     padding-top: 250px;
+    //     padding-bottom: 220px;
+    //     &::before {
+    //         background: url(../images/header/images.jpg) no-repeat center center;
+    //         background-size: cover;
+    //         @include retina {
+    //             background: url(../images/header/images-2x.jpg) no-repeat center center;
+    //             background-size: cover;
+    //         }
+    //     }
+    // }
+}
+/* logo
+-------------------------------- */
+.logo {
+    font-family: $fontBold;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $primDark;
+}
+/* menu
+-------------------------------- */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 53px;
+    overflow: hidden;
+    z-index: 100000;
+    transition: height $duration;
+    background-color: rgba(0,0,0,.8);
+
+    &__wrapper {
+        padding: 0;
+        border-bottom: 5px solid $primDark;
+        background-color: #fff;
+    }
+
+    & &__logo {
+        display: inline-block;
+        margin: 15px 20px;
+    }
+
+    &__relay {
+        float: right;
+        width: 22px;
+        height: 14px;
+        margin: 19px 20px;
+        padding: 0;
+        cursor: pointer;
+        border: none;
+        border-top: 2px solid $fontColor;
+        border-bottom: 2px solid $fontColor;
+        background-color: transparent;
+        &::before {
+            content: '';
+            display: block;
+            height: 2px;
+            background-color: $fontColor;
+        }
+        &:hover {
+            border-color: $primDark;
+            &::before {
+                background-color: $primDark;
+            }
+        }
+    }
+
+    &__item {
+        display: inline-block;
+        visibility: hidden;
+        width: 100%;
+        padding: 15px 20px;
+        font-family: $fontLight;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $fontColor;
+        transition: visibility $duration;
+        border-bottom: 1px solid #ddd;
+        &--active {
+            color: $secondLight;
+        }
+        &:hover {
+            color: $primLight;
+            border-color: $fontColor;
+            background-color: $fontColor;
+        }
+    }
+
+    @supports (display: $flex) {
+        &__wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+        & &__logo {
+            order: -2;
+            margin-right: auto;
+        }
+        &__relay {
+            margin-left: 15px;
+        }
+        &__item {
+            &--active {
+                display: inline-block;
+                visibility: visible;
+                width: auto;
+                order: -1;
+                padding: 0;
+                border-bottom: none;
+                &:hover {
+                    color: $secondLight;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    @include max($medium - 1) {
+        &--open {
+            height: 100%;
+            animation: scroll .1s $duration forwards;
+        }
+        &__relay {
+            &--pressed {
+                border-color: $primDark;
+                &::before {
+                    background-color: $primDark;
+                }
+            }
+        }
+        &__item {
+            &--visible {
+                visibility: visible;
+            }
+        }
+    }
+
+    @include min($medium) {
+        height: auto;
+        padding: 15px 0;
+        background-color: #fff;
+        &__wrapper {
+            text-align: right;
+            border-bottom: none;
+            background-color: transparent;
+        }
+        & &__logo {
+            float: left;
+        }
+        &__relay {
+            display: none;
+        }
+        &__item {
+            visibility: visible;
+            width: auto;
+            margin: 15px 20px 15px 10px;
+            padding: 0;
+            border-bottom: none;
+            &:hover {
+                color: $primDark;
+                background-color: transparent;
+            }
+            &--active {
+                &:hover {
+                    color: $secondLight;
+                }
+            }
+        }
+        &--transition {
+            transition: padding $duration;
+        }
+        &--thin {
+            padding: 0;
+        }
+        @supports (display: $flex) {
+            &__item {
+                &--active {
+                    order: 0;
+                }
+            }
+        }
+    }
+}
+
+.menu--no-js {
+    height: auto;
+    background-color: transparent;
+    @include min($medium) {
+        padding: 0;
+        background-color: #fff;
+    }
+    .menu {
+        &__logo {
+            margin: 7px 10px;
+        }
+        &__relay {
+            display: none;
+        }
+        &__item {
+            visibility: visible;
+            width: auto;
+            padding: 7px 10px;
+            border-bottom: none;
+        }
+        @include min($medium) {
+            &__logo {
+                margin: 15px 20px;
+            }
+            &__item {
+                width: auto;
+                margin: 15px 20px 15px 10px;
+                padding: 0;
+            }
+            @supports (display: $flex) {
+                &__logo {
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}
+
+@keyframes scroll {
+    100% {
+        overflow-y: auto;
+    }
+}
+/* par
+-------------------------------- */
+p {
+    font-family: $fontRegular;
+    font-size: 17px;
+    color: $fontColor;
+    line-height: 1.6em;
+}
