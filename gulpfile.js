@@ -21,7 +21,8 @@ let gulp = require('gulp'),
     del = require('del'),
     path = require('path'),
     fs = require('fs'),
-    production = false;
+    production = false,
+    multiprojects = false;
 
 let paths = {
     components: 'develop/components',
@@ -50,7 +51,7 @@ gulp.task('blocks:pug', () => {
             callback(null, file);
         }))
         .pipe(remember('blocks:pug'))
-        .pipe(bemblocks.lex('blocks'))
+        .pipe(gulpIf(multiprojects, bemblocks.lex('blocks')))
         .pipe(concat('blocks.pug'))
         .pipe(gulp.dest(`${paths.pages}/helpers`));
 });
@@ -102,7 +103,7 @@ gulp.task('bemblocks:js', (done) => {
 
 gulp.task('pages', () => {
     return gulp.src(`${paths.pages}/*.pug`)
-        .pipe(bemblocks.lex('pages'))
+        .pipe(gulpIf(multiprojects, bemblocks.lex('pages')))
         .pipe(pug({pretty: true, plugins: [pugbem]}))
         .pipe(gulpIf(production, beautifyCode()))
         .pipe(gulp.dest(`${paths.out}`));
