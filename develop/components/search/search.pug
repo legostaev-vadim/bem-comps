@@ -1,0 +1,7 @@
+mixin search(mix)
+    form.search(class=mix action="#" method="POST")
+        ._case
+            button._close(type="button")
+            input._query(type="search" name="query" placeholder="enter your request" required)
+        button._submit(type="submit")
+            +symbol('search__icon', 'search', '0 0 27 28')

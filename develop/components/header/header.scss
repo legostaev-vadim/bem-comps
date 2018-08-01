@@ -1,60 +1,60 @@
 /* header
 -------------------------------- */
 .header {
-    padding-top: 150px;
-    padding-bottom: 100px;
-    overflow: hidden;
-    position: relative;
+    text-align: center;
+    background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)), url('../img/header/001-m.jpg') no-repeat;
+    background-size: cover;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 53px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        transform: scaleX(-1);
+    &__wrapper {
+        padding-top: 230px;
+        padding-bottom: 220px;
     }
-
+    
     &__title {
-        margin-bottom: 20px;
-        font-family: $fontBold;
-        font-size: 45px;
-        text-transform: uppercase;
-        text-shadow: 0 0 5px #fff;
+        margin: 0;
+        font-family: $font-primary-medium;
+        font-size: 24px;
+        font-weight: normal;
+        color: $text-secondary-color;
     }
 
     &__subtitle {
-        margin-bottom: 60px;
-        font-size: 25px;
-        text-transform: uppercase;
-        text-shadow: 0 0 2px #000;
-        color: #fff;
-        letter-spacing: 1px;
+        margin: 0;
+        margin-top: 15px;
+        font-family: $font-primary-bold;    
+        font-size: 40px;
+        font-weight: normal;
+        color: $text-secondary-color;
     }
 
-    // @include max($medium - 1) {
-    //     &::before {
-    //         background: url(../images/header/images-mob.jpg) no-repeat center center;
-    //         background-size: cover;
-    //         @include retina {
-    //             background: url(../images/header/images-2x-mob.jpg) no-repeat center center;
-    //             background-size: cover;
-    //         }
-    //     }
-    // }
+    @include min($screen-sm) {
+        &__wrapper {
+            padding-top: 330px;
+            padding-bottom: 320px;
+        }
+        &__title {
+            font-size: 30px;
+        }
+        &__subtitle {  
+            font-size: 45px;
+        }
+    }
 
-    // @include min($medium) {
-    //     padding-top: 250px;
-    //     padding-bottom: 220px;
-    //     &::before {
-    //         background: url(../images/header/images.jpg) no-repeat center center;
-    //         background-size: cover;
-    //         @include retina {
-    //             background: url(../images/header/images-2x.jpg) no-repeat center center;
-    //             background-size: cover;
-    //         }
-    //     }
-    // }
+    @include min($screen-md) {
+        background: linear-gradient(rgba(17,17,17,.7), rgba(17,17,17,.7)), url('../img/header/001.jpg') no-repeat;
+        background-size: cover;
+    }
+
+    @include min($screen-lg) {
+        &__wrapper {
+            padding-top: 400px;
+            padding-bottom: 390px;
+        }
+        &__title {
+            font-size: 36px;
+        }
+        &__subtitle {  
+            font-size: 51px;
+        }
+    }
 }

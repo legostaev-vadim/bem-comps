@@ -1,0 +1,91 @@
+/* search
+-------------------------------- */
+.search {
+    height: 32px;
+    display: inline-block;
+    position: relative;
+
+    &__case {
+        position: absolute;
+        display: flex;
+        left: 0;
+        height: 100%;
+        right: 34px;
+        overflow: hidden;
+        transition: left $duration;
+        &--open {
+            left: -240px;
+        }
+    }
+
+    &__close {
+        position: relative;
+        height: 100%;
+        width: 34px;
+        padding: 0;
+        cursor: pointer;
+        border: none;
+        border-radius: $radius 0 0 $radius;
+        background: $color-secondary-light;
+        transition: background-color $duration;
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 7px;
+            width: 20px;
+            height: 2px;
+            margin-top: -1px;
+            transform: rotate(-45deg);
+            background: $color-primary-light;
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+    }
+
+    &__query {
+        flex: 1;
+        height: 100%;
+        max-width: calc(100% - 34px);
+        padding: 0 10px;
+        font-family: $font-primary-regular;
+        font-size: 14px;
+        color: $text-primary-color;
+        border: none;
+    }
+
+    &__submit {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        height: 100%;
+        width: 34px;
+        padding: 0;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        transition: all $duration;
+        &:hover {
+            opacity: $opacity;
+        }
+        &--active {
+            border-radius: 0 $radius $radius 0;
+            background: $color-primary-active;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &--error {
+            background: $color-primary-error;
+        }
+    }
+
+    &__icon {
+        height: 28px;
+        fill: $color-primary-light;
+        &--small {
+            height: 26px;
+        }
+    }
+}

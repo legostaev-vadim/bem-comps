@@ -1,5 +1,27 @@
 /* footer
 -------------------------------- */
 .footer {
-    color: #444;
+    background: $color-primary-dark;
+
+    &__wrapper {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: $font-primary-medium;
+        font-size: 24px;
+        color: $text-secondary-color;
+    }
+
+    &__text {
+        margin: 0;
+        margin-top: 10px;
+        font-family: $font-primary-medium;
+        font-size: 14px;
+        line-height: 1.6em;
+        color: $head-primary-color;
+        transition: color $duration;
+    }
 }

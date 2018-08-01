@@ -1,6 +1,6 @@
-# bemoji
+# bem-comps
 
-**BEM**-project collector
+**bem-comps** project
 
 # Install
 

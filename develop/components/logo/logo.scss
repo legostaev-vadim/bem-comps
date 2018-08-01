@@ -1,9 +1,19 @@
 /* logo
 -------------------------------- */
 .logo {
-    font-family: $fontBold;
-    font-size: 18px;
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    text-transform: uppercase;
-    color: $primDark;
+    font-family: $font-primary-regular;
+    font-size: 30px;
+    color: $text-secondary-color;
+    
+    &__icon {
+        height: 24px;
+        fill: $color-primary-light;
+    }
+
+    &__text {
+        margin: 0;
+    }
 }

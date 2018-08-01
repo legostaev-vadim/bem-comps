@@ -1,13 +1,10 @@
 /* button-up
 -------------------------------- */
-(function(window) {
-    
-    const $ = window.jQuery,
-        $buttonUp = $('.button-up');
+jQuery('.button-up').each(function() {
 
-    $buttonUp.removeClass('button-up--no-js');
-    
-    $(window).scroll(function() {
+    const $buttonUp = $(this);
+
+    $(window).on('scroll.buttonup', function() {
         if ($(window).scrollTop() > 150) {
             $buttonUp.addClass('button-up--show');
         } else {
@@ -18,5 +15,5 @@
     $buttonUp.on('click', function() {
         $('html, body').stop().animate({scrollTop : 0}, 600);
     });
-    
-})(window);
+
+});

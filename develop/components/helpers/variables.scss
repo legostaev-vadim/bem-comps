@@ -1,0 +1,36 @@
+$font-primary-light: Montserrat-Light;
+$font-secondary-light: Montserrat-UltraLight;
+$font-primary-regular: Raleway-Regular;
+$font-secondary-regular: Roboto-Regular;
+$font-primary-medium: Raleway-Medium;
+$font-primary-bold: Raleway-ExtraBold;
+$font-secondary-bold: Raleway-SemiBold;
+
+$color-primary-dark: #362f2d;
+$color-primary-middle: #998675;
+$color-primary-light: #fff;
+$color-secondary-dark: #555555; // rgba(85, 85, 85, 255)
+$color-secondary-light: #ccc;
+
+$color-primary-hover: #534844;
+$color-primary-active: rgb(0,191,243);
+$color-primary-error: #ff9f00;
+
+$head-primary-color: $color-secondary-dark; // rgba(85, 85, 85, 255)
+
+$text-primary-color: #8c8c8c; // rgba(140, 140, 140, 255)
+$text-secondary-color: $color-primary-light; // #fff
+$text-primary-accent: #c7b299; // rgba(199, 178, 153, 255)
+$text-primary-decor: #615855; // rgba(97, 88, 85, 255)
+$text-secondary-decor: #d1d1d1; // rgba(209, 209, 209, 255)
+
+$screen-nm: 414;
+$screen-sm: 576;
+$screen-md: 768;
+$screen-lg: 992;
+$screen-xl: 1230;
+
+$duration: .3s;
+$overtime: .2s;
+$radius: 3px;
+$opacity: .8;

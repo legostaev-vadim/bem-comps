@@ -2,18 +2,17 @@
 -------------------------------- */
 .button-up {
     position: fixed;
-    z-index: 9999;
+    z-index: 1000;
     right: 12px;
     bottom: -50px;
     width: 40px;
     height: 40px;
     cursor: pointer;
-    opacity: .6;
-    transition: all $duration;
+    opacity: .8;
     border: none;
-    border-radius: $borderRadius;
-    background-color: $primDark;
-
+    border-radius: 3px;
+    background: #df7c09;
+    transition: all .3s;
     &::before {
         content: '';
         position: absolute;
@@ -25,16 +24,10 @@
         border-top: none;
         border-bottom: 12px solid #fff;
     }
-
     &:hover {
-        opacity: .9;
+        opacity: 1;
     }
-
     &--show {
         bottom: 12px;
     }
-}
-
-.button-up--no-js {
-    display: none;
 }

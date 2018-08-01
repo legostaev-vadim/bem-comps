@@ -1,9 +1,16 @@
-nav.menu.-no-js(class=ext)
-    ._wrapper
-        +logo(false, 'menu')
-        button._relay
-        each val, idx in content.items || ['Home','About','Gallery','Blog','Contacts']
-            if (idx === (content.active || 0))
-                a(href="#")._item.-active= val
-            else
-                a(href="#")._item= val
+mixin menu(mix)
+    nav.menu(class=mix)
+        ._wrapper
+            button._button
+            +logo('menu__logo')
+            +cart('menu__cart')
+            +search('menu__search')
+            ._list
+                a._item(href="#")= 'Home'
+                a._item.-active(href="#")= 'About Us'
+                a._item(href="#")= 'Portfolio'
+                a._item(href="#")= 'Features'
+                a._item(href="#")= 'Blog'
+                a._item(href="#")= 'Pricing'
+                a._item(href="#")= 'Shortcodes'
+                a._item(href="#")= 'Contact'

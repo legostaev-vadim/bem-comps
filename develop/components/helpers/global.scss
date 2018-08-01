@@ -1,0 +1,55 @@
+/* global
+-------------------------------- */
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a, button, input, [type="submit"] {
+    &:active, &:focus  {
+        outline: none;
+    }
+}
+
+.page {
+    font-family: $font-primary-light;
+    font-size: 16px;
+    color: $text-primary-color;
+    min-height: 10000px;
+    // background: linear-gradient(rgba(0,255,0,.5), rgba(0,255,0,.5)), url(../img/maket.jpg) no-repeat top center;
+    // opacity: 0.5;
+}
+
+.main {
+    overflow-x: hidden;
+}
+
+[class*=wrapper] {
+    max-width: #{$screen-xl}px;
+    margin: 0 auto;
+    padding: 0 15px;
+    @include min($screen-lg) {
+        padding: 0 30px;
+    }
+}
+
+.viewbox {
+    &-container {
+        z-index: 100000;
+        background: rgba(0,0,0,.8);
+    }
+    &-button-default {
+        transition: all $duration;
+    }
+    &-button-close {
+        width: 50px;
+        height: 50px;
+        top: 15px;
+        right: 15px;
+        fill: #ccc;
+    }
+    &-button-prev,
+    &-button-next {
+        width: 102px;
+    }
+}

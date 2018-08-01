@@ -1,0 +1,14 @@
+/* cart
+-------------------------------- */
+.cart {
+    font-size: 0;
+    transition: opacity $duration;    
+    &:hover {
+        opacity: $opacity;
+    }
+
+    &__icon {
+        height: 27px;
+        fill: $color-primary-light;
+    }
+}
