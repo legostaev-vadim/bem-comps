@@ -1,3 +1,3 @@
 mixin symbol(mix, id, vbox)
-    svg.symbol(class=mix viewBox=vbox)
+    svg.symbol(class=mix viewBox='0 0 '+vbox)
         use(xlink:href= `img/symbols.svg#${id}`)
